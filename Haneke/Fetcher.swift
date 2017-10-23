@@ -22,20 +22,20 @@ open class Fetcher<T : DataConvertible> {
     open func cancelFetch() {}
 }
 
-class SimpleFetcher<T : DataConvertible> : Fetcher<T> {
+public class SimpleFetcher<T : DataConvertible> : Fetcher<T> {
     
     let getValue : () -> T.Result
     
-    init(key: String, value getValue : @autoclosure @escaping () -> T.Result) {
+    public init(key: String, value getValue : @autoclosure @escaping () -> T.Result) {
         self.getValue = getValue
         super.init(key: key)
     }
     
-    override func fetch(failure fail: @escaping ((Error?) -> ()), success succeed: @escaping (T.Result) -> ()) {
+    override public func fetch(failure fail: @escaping ((Error?) -> ()), success succeed: @escaping (T.Result) -> ()) {
         let value = getValue()
         succeed(value)
     }
     
-    override func cancelFetch() {}
+    override public func cancelFetch() {}
     
 }

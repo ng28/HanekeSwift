@@ -9,10 +9,10 @@
 import UIKit
 
 // Used to add T to NSCache
-class ObjectWrapper : NSObject {
-    let hnk_value: Any
+public class ObjectWrapper : NSObject {
+    public let hnk_value: Any
     
-    init(value: Any) {
+    public init(value: Any) {
         self.hnk_value = value
     }
 }

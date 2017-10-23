@@ -12,7 +12,7 @@ public extension HanekeGlobals {
     
     public struct UIKit {
         
-        static func formatWithSize(_ size : CGSize, scaleMode : ImageResizer.ScaleMode, allowUpscaling: Bool = true) -> Format<UIImage> {
+        public static func formatWithSize(_ size : CGSize, scaleMode : ImageResizer.ScaleMode, allowUpscaling: Bool = true) -> Format<UIImage> {
             let name = "auto-\(size.width)x\(size.height)-\(scaleMode.rawValue)"
             let cache = Shared.imageCache
             if let (format,_,_) = cache.formats[name] {
@@ -40,9 +40,9 @@ public extension HanekeGlobals {
             
         }
         
-        static var SetImageAnimationDuration = 0.1
-        static var SetImageFetcherKey = 0
-        static var SetBackgroundImageFetcherKey = 1
+        public static var SetImageAnimationDuration = 0.1
+        public static var SetImageFetcherKey = 0
+        public static var SetBackgroundImageFetcherKey = 1
     }
     
 }
